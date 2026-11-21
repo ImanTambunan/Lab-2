@@ -2,19 +2,18 @@ def calculate_bmi(height, weight):
     print("Height = " + str(height))
     print("Weight = " + str(weight))
     bmi = weight / (height ** 2)
-
     print(f"bmi: {bmi:.2f}")
+
     if bmi < 18.5:
-        cat = "under"
+        print("category: under weight")
         return -1
-    elif bmi < 25:
-        cat = "norm"
+    elif bmi <= 25.0:
+        print("category: normal weight")
         return 0
-    elif bmi < 30:
-        cat = "over"
-        return 1
     else:
-        cat = "obese"
-    print(f"category: {cat}")
-    
-calculate_bmi(weight=101, height=1.80)
+        print("category: over weight")
+        return 1
+
+
+if __name__ == "__main__":
+    calculate_bmi(weight=101, height=1.80)
